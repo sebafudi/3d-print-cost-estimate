@@ -10,18 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Projekt_1 {
   /// <summary>
-  /// Interaction logic for MainWindow.xaml
+  /// Interaction logic for Filament.xaml
   /// </summary>
-  public partial class MainWindow : Window {
-    public MainWindow() {
+  public partial class Filament : Window {
+    public Filament() {
       InitializeComponent();
-      new Filament().Show();
-      new AddFilament().Show();
     }
   }
 }

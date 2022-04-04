@@ -30,7 +30,7 @@
                     Margin="10"
                   Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
                   ToolTip="MaterialDesignFloatingActionButton"
-                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="Button_Click">
                 <materialDesign:PackIcon Kind="PlusThick" Height="32" Width="32" />
             </Button>
         </Grid>
@@ -52,7 +52,7 @@
                     <TextBlock Margin="2" Grid.Row="3" Style="{StaticResource MaterialDesignHeadline6TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Fiberlogy" />
                     <materialDesign:RatingBar Margin="2" Value="5" IsReadOnly="True" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center"/>
                     <TextBlock Margin="2" Grid.Row="5" Style="{StaticResource MaterialDesignHeadline6TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Text="70 zł/kg" />
-                    <Button Grid.Row="6" Margin="10, 5">Wybierz</Button>
+                    <Button Grid.Row="6" Margin="10, 5" Click="Select_Filament">Wybierz</Button>
                 </Grid>
             </materialDesign:Card>
             <materialDesign:Card Margin="10" Padding="10" Width="200">
@@ -72,7 +72,7 @@
                     <TextBlock Margin="2" Grid.Row="3" Style="{StaticResource MaterialDesignHeadline6TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Text="ROSA3D" />
                     <materialDesign:RatingBar Margin="2" Value="3" IsReadOnly="True" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center"/>
                     <TextBlock Margin="2" Grid.Row="5" Style="{StaticResource MaterialDesignHeadline6TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Text="55 zł/kg" />
-                    <Button Grid.Row="6" Margin="10, 5">Wybierz</Button>
+                    <Button Grid.Row="6" Margin="10, 5" Click="Select_Filament">Wybierz</Button>
                 </Grid>
             </materialDesign:Card>
         </WrapPanel>

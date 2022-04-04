@@ -36,7 +36,7 @@
                 </Grid.RowDefinitions>
                 <WrapPanel Grid.Row="0" Margin="0,10">
                     <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" Margin="0,0,15,0" Text="1. Model" />
-                    <Button>Wybierz plik</Button>
+                    <Button Content="Wybierz plik" Click="Button_Click"/>
                 </WrapPanel>
                 <Grid Grid.Row="1" Margin="0,10">
                     <Grid.RowDefinitions>
@@ -44,20 +44,19 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Margin="0,0,15,0" Text="2. Podgląd" />
-                    <HelixToolkit:HelixViewport3D Grid.Row="1" Height="400" x:Name="myView" ZoomExtentsWhenLoaded="True" >
+                    <HelixToolkit:HelixViewport3D Grid.Row="1" Height="400" x:Name="modelView" ZoomExtentsWhenLoaded="True" >
 
-                        <!--<HelixToolkit:DefaultLights/>-->
-                        <HelixToolkit:Teapot/>
+                        <HelixToolkit:DefaultLights/>
+                        <!--<HelixToolkit:Teapot/>-->
                         <!-- Remember to add light to the scene -->
-                        <HelixToolkit:SunLight/>
-                        <!-- You can also add elements here in the xaml -->
-                        <HelixToolkit:GridLinesVisual3D Width="4" Length="4" MinorDistance="1" MajorDistance="1" Thickness="0.01"/>
-                        <!--<HelixToolkit:FileModelVisual3D x:Name="model1" Source="C:\Users\sebas\3D Objects\Clamp_Spacer.stl"/>-->
+                        <!--<HelixToolkit:SunLight/>-->
+                        <!--<HelixToolkit:GridLinesVisual3D Width="4" Length="4" MinorDistance="1" MajorDistance="1" Thickness="0.01"/>-->
+                        <ModelVisual3D x:Name="modelDisplay"/>
                     </HelixToolkit:HelixViewport3D>
                 </Grid>
                 <WrapPanel Grid.Row="2" Margin="0,10">
                     <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" Margin="0,0,15,0" Text="3. Materiał" />
-                    <Button>Wybierz materiał</Button>
+                    <Button Click="Button_Click_1">Wybierz materiał</Button>
                 </WrapPanel>
                 <DockPanel Grid.Row="3" Margin="0,10" >
                     <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" Margin="0,0,15,0" Text="4. Poziom wypełnienia" />

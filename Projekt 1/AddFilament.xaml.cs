@@ -20,5 +20,8 @@ namespace Projekt_1 {
     public AddFilament() {
       InitializeComponent();
     }
+    private void Add_Filament(object sender, RoutedEventArgs e) {
+      this.Close();
+    }
   }
 }

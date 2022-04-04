@@ -59,7 +59,7 @@
               Text=""
               Margin="8 0 0 0"
               VerticalAlignment="Bottom" />
-            <Button Margin="10">Dodaj</Button>
+            <Button Content="Dodaj" Click="Add_Filament"/>
         </StackPanel>
     </materialDesign:Card>
 </Window>

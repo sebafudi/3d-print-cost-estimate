@@ -20,18 +20,21 @@
             <TextBox
               Style="{StaticResource MaterialDesignFloatingHintTextBox}"
               materialDesign:HintAssist.Hint="Typ"
+              Name="filType"
               Text=""
               Margin="8 0 0 0"
               VerticalAlignment="Bottom" />
             <TextBox
               Style="{StaticResource MaterialDesignFloatingHintTextBox}"
               materialDesign:HintAssist.Hint="Kolor"
+              Name="filColor"
               Text=""
               Margin="8 0 0 0"
               VerticalAlignment="Bottom" />
             <TextBox
               Style="{StaticResource MaterialDesignFloatingHintTextBox}"
               materialDesign:HintAssist.Hint="Firma"
+              Name="filManufacturer"
               Text=""
               Margin="8 0 0 0"
               VerticalAlignment="Bottom" />
@@ -39,23 +42,25 @@
                 <TextBlock VerticalAlignment="Center"
               Style="{StaticResource MaterialDesignCaptionTextBlock}"
               Text="Ocena:" />
-                <materialDesign:RatingBar Margin="2"  Grid.Row="4" VerticalAlignment="Center"/>
+                <materialDesign:RatingBar Name="filRating" Margin="2"  Grid.Row="4" VerticalAlignment="Center"/>
             </WrapPanel>
             <WrapPanel Margin="8 5 0 0">
                 <TextBlock VerticalAlignment="Center"
               Style="{StaticResource MaterialDesignCaptionTextBlock}"
               Text="Zdjęcie:" />
-                <Button Margin="8 0 0 0">Wybierz zdjęcie</Button>
+                <Button Margin="8 0 0 0" Click="Button_Click">Wybierz zdjęcie</Button>
             </WrapPanel>
             <TextBox
               Style="{StaticResource MaterialDesignFloatingHintTextBox}"
               materialDesign:HintAssist.Hint="Cena/kg"
+              Name="filPrice"
               Text=""
               Margin="8 0 0 0"
               VerticalAlignment="Bottom" />
             <TextBox
               Style="{StaticResource MaterialDesignFloatingHintTextBox}"
               materialDesign:HintAssist.Hint="Gęstość"
+              Name="filDensity"
               Text=""
               Margin="8 0 0 0"
               VerticalAlignment="Bottom" />

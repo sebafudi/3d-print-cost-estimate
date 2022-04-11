@@ -34,8 +34,8 @@
                 <materialDesign:PackIcon Kind="PlusThick" Height="32" Width="32" />
             </Button>
         </Grid>
-        <WrapPanel Grid.Row="1" HorizontalAlignment="Center">
-            <materialDesign:Card Margin="10" Padding="10" Width="200">
+        <WrapPanel Name="filementContainer"  Grid.Row="1" HorizontalAlignment="Center">
+            <!--<materialDesign:Card Margin="10" Padding="10" Width="200">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100" />
@@ -54,27 +54,7 @@
                     <TextBlock Margin="2" Grid.Row="5" Style="{StaticResource MaterialDesignHeadline6TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Text="70 zł/kg" />
                     <Button Grid.Row="6" Margin="10, 5" Click="Select_Filament">Wybierz</Button>
                 </Grid>
-            </materialDesign:Card>
-            <materialDesign:Card Margin="10" Padding="10" Width="200">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="100" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Source="C:\Users\sebas\Pictures\PLA-Starter_white.jpg"/>
-                    <TextBlock Margin="2" Grid.Row="1" Style="{StaticResource MaterialDesignHeadline6TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Text="PLA" />
-                    <TextBlock Margin="2" Grid.Row="2" Style="{StaticResource MaterialDesignHeadline6TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Biały" />
-                    <TextBlock Margin="2" Grid.Row="3" Style="{StaticResource MaterialDesignHeadline6TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Text="ROSA3D" />
-                    <materialDesign:RatingBar Margin="2" Value="3" IsReadOnly="True" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center"/>
-                    <TextBlock Margin="2" Grid.Row="5" Style="{StaticResource MaterialDesignHeadline6TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Text="55 zł/kg" />
-                    <Button Grid.Row="6" Margin="10, 5" Click="Select_Filament">Wybierz</Button>
-                </Grid>
-            </materialDesign:Card>
+            </materialDesign:Card>-->
         </WrapPanel>
     </Grid>
 </Window>

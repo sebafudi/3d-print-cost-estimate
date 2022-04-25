@@ -17,6 +17,7 @@ namespace Projekt_1 {
   /// <summary>
   /// Interaction logic for Window1.xaml
   /// </summary>
+
   public partial class AddFilament : Window {
     public string fType {
       get { return filType.Text; }

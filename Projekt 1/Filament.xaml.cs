@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,13 +15,14 @@ namespace Projekt_1 {
   /// Interaction logic for Filament.xaml
   /// </summary>
   public class FilamentObj {
-    public FilamentObj(string picture, string type, string color, string manufacturer, int rating, string price) {
+    public FilamentObj(string picture, string type, string color, string manufacturer, int rating, string price, string density) {
       this.picture = picture;
       this.type = type;
       this.color = color;
       this.manufacturer = manufacturer;
       this.rating = rating;
       this.price = price;
+      this.density = density;
     }
     public string picture;
     public string type;
@@ -28,6 +30,7 @@ namespace Projekt_1 {
     public string manufacturer;
     public int rating;
     public string price;
+    public string density;
   }
 
   public partial class Filament : Window {
@@ -58,7 +61,7 @@ namespace Projekt_1 {
             products = (List<FilamentObj>)serializer.Deserialize(file, typeof(List<FilamentObj>));
           }
         }
-        FilamentObj filament = new FilamentObj(w.fPicture, w.fType.ToString(), w.fColor.ToString(), w.fManufacturer.ToString(), w.fRating, w.fPrice.ToString());
+        FilamentObj filament = new FilamentObj(w.fPicture, w.fType.ToString(), w.fColor.ToString(), w.fManufacturer.ToString(), w.fRating, w.fPrice.ToString(), w.fDensity.ToString());
         products.Add(filament);
 
         string json = JsonConvert.SerializeObject(products, Formatting.Indented);
@@ -87,7 +90,14 @@ namespace Projekt_1 {
       }
 
       var image = new System.Windows.Controls.Image();
-      image.Source = new BitmapImage(new Uri(filament.picture));
+
+      FileStream stream = new FileStream(filament.picture, FileMode.Open, FileAccess.Read);
+      BitmapImage src = new BitmapImage();
+      src.BeginInit();
+      src.StreamSource = stream;
+      src.EndInit();
+
+      image.Source = src;
       Grid.SetRow(image, 0);
       image.Margin = new Thickness(2);
       image.HorizontalAlignment = HorizontalAlignment.Center;
@@ -139,6 +149,7 @@ namespace Projekt_1 {
       Grid.SetRow(confirmButton, 6);
       confirmButton.Content = "Wybierz";
       confirmButton.Click += Select_Filament;
+      confirmButton.Tag = filament.price + " " + filament.density;
 
       grid.Children.Add(image);
       grid.Children.Add(type);
@@ -150,8 +161,17 @@ namespace Projekt_1 {
       card.Content = grid;
       return card;
     }
-
+    public double price = 1;
+    public double density = 1;
     private void Select_Filament(object sender, RoutedEventArgs e) {
+      this.DialogResult = true;
+      var button = sender as Button;
+      var values = button.Tag.ToString();
+      String [] strlist = values.Split(" ", 2);
+
+      double.TryParse(strlist [0].Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture, out price);
+      double.TryParse(strlist [1].Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture, out density);
+
       this.Close();
     }
   }

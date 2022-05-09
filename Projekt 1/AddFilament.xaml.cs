@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,9 +52,12 @@ namespace Projekt_1 {
 
     private void Button_Click(object sender, RoutedEventArgs e) {
       var openFileDialog = new OpenFileDialog();
-      openFileDialog.Filter = "Image Files (*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg";
+      openFileDialog.Filter = "Image Files (*.bmp;*.png;*.jpg;*.webp)|*.bmp;*.png;*.jpg;*.webp";
       if (openFileDialog.ShowDialog() == true) {
-        pictureSrc = openFileDialog.FileName;
+        long timeStamp = DateTime.Now.ToFileTime();
+        string newFileName = timeStamp.ToString() + System.IO.Path.GetExtension(openFileDialog.SafeFileName);
+        File.Copy(openFileDialog.FileName, newFileName);
+        pictureSrc = newFileName;
       }
     }
   }
